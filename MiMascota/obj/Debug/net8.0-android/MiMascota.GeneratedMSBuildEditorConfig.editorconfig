@@ -1,0 +1,121 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MiMascota
+build_property.ProjectDir = C:\Users\Ariel Larraguibel\Downloads\MiMascota\MiMascota\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/Chats.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.Chats.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Chats.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Chats.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/ChatUsuario.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.ChatUsuario.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ChatUsuario.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ChatUsuario.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/CodigoValidacionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.CodigoValidacionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CodigoValidacionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CodigoValidacionPage.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/DashboardAdopcionesPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.DashboardAdopcionesPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DashboardAdopcionesPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DashboardAdopcionesPage.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/DetallesAdopcion.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.DetallesAdopcion.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DetallesAdopcion.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DetallesAdopcion.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/EditarPerfil.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.EditarPerfil.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditarPerfil.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditarPerfil.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/Explorar.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.Explorar.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Explorar.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Explorar.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/MapPublicaciones.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.MapPublicaciones.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MapPublicaciones.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MapPublicaciones.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/PerfilPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.PerfilPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PerfilPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PerfilPage.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/RegistroAdopcionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.RegistroAdopcionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RegistroAdopcionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RegistroAdopcionPage.xaml
+
+[C:/Users/Ariel Larraguibel/Downloads/MiMascota/MiMascota/Views/RegistroPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MiMascota.Views.RegistroPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RegistroPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RegistroPage.xaml

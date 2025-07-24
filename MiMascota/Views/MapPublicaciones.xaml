@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             x:Class="MiMascota.Views.MapPublicaciones"
+             Title="Mapa de Mascotas">
+
+    <Grid>
+        <!-- Mapa principal -->
+        <maps:Map x:Name="myMap" MapType="Street" />
+
+        <!-- Botón flotante de recarga (arriba) con Font Awesome -->
+        <Button x:Name="btnRecargar"
+                FontFamily="FontAwesomeSolid"
+                Text="&#xf2f9;"  
+            FontSize="24"
+                BackgroundColor="White"
+                TextColor="#2c3e50"
+                WidthRequest="50"
+                HeightRequest="50"
+                CornerRadius="25"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                Margin="0,20,20,0"/>
+
+            <!-- Botón de ubicación (abajo) con Font Awesome -->
+            <Button x:Name="btnUbicacion"
+                FontFamily="FontAwesomeSolid"
+                Text="&#xf3c5;" 
+                FontSize="24"
+                BackgroundColor="White"
+                TextColor="#3498db"
+                WidthRequest="50"
+                HeightRequest="50"
+                CornerRadius="25"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                Margin="20,0,0,20"/>
+        <Label x:Name="lblMarcador"
+               FontFamily="FontAwesomeSolid"
+               Text="&#xf3c5;" 
+            FontSize="36"
+               TextColor="#e74c3c"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               TranslationY="-24"
+               IsVisible="False"/>
+    </Grid>
+</ContentPage>

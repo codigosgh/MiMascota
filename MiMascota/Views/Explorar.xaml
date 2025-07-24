@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:viewmodels="clr-namespace:MiMascota.ViewModels"
+          xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+          xmlns:converters="clr-namespace:MiMascota.Converters"
+          x:Class="MiMascota.Views.Explorar"
+          Title="Explorar"
+          Shell.NavBarIsVisible="False"
+          NavigationPage.HasNavigationBar="False">
+
+    
+    <ContentPage.BindingContext>
+        <viewmodels:ExplorarViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <CarouselView x:Name="carouselView"
+                  ItemsSource="{Binding Videos}"
+                  Loop="False"
+                  ItemsLayout="VerticalList"
+                  VerticalScrollBarVisibility="Never"
+                  HorizontalScrollBarVisibility="Never"
+                  PeekAreaInsets="0"
+                  CurrentItemChanged="CarouselView_CurrentItemChanged"
+                  Scrolled="CarouselView_Scrolled">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid BackgroundColor="Black">
+                        <!-- MediaElement ocupa todo el espacio -->
+                        <toolkit:MediaElement
+                        Source="{Binding VideoUrl}"
+                        Aspect="AspectFill"
+                        x:Name="mediaElement"
+                        Loaded="OnMediaElementLoaded">
+                            <!-- Opcional: Gesture para play/pause manual -->
+                            <toolkit:MediaElement.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="2" />
+                            </toolkit:MediaElement.GestureRecognizers>
+                        </toolkit:MediaElement>
+
+                        <!-- Overlay información usuario/descripción -->
+                        <Grid VerticalOptions="End"
+      Margin="20"
+      Padding="0"
+      ZIndex="1"
+      BackgroundColor="#30000000">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- Nombre de usuario -->
+                            <Label Grid.Row="0"
+           Text="{Binding UserName}"
+           FontSize="18"
+           FontAttributes="Bold"
+           TextColor="White"
+           Margin="5,0,0,5" />
+
+                            <!-- Descripción -->
+                            <Label Grid.Row="1"
+           Text="{Binding DescriptionLimited}"
+           FontSize="14"
+           TextColor="White"
+           LineBreakMode="WordWrap"
+           Margin="5,0,0,25">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer
+                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ExplorarViewModel}}, Path=ToggleDescriptionCommand}"
+                CommandParameter="{Binding .}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+
+
+                        <!-- Reacciones flotantes con ZIndex -->
+                        <StackLayout
+                        Orientation="Vertical"
+                        Spacing="15"
+                        BackgroundColor="#30000000"
+                        Padding="5"
+                        ZIndex="2"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Margin="0,0,-5,0">
+
+                            <!-- Laugh -->
+                            <Button Text="&#xf599;"
+                                FontFamily="FontAwesomeSolid"
+                                FontSize="20"
+                                    TextColor="#FFFAF0"
+                                BackgroundColor="Transparent"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ExplorarViewModel}}, Path=ReactCommand}"
+                                CommandParameter="{Binding Source={RelativeSource Mode=Self}, Path=BindingContext, Converter={StaticResource ReactionConverter}, ConverterParameter=Laugh}">
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button"
+                                             Binding="{Binding SelectedReaction}"
+                                             Value="Laugh">
+                                        <Setter Property="TextColor" Value="Yellow"/>
+                                        <Setter Property="Scale" Value="1.3"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+
+                            <!-- Love -->
+                            <Button Text="&#xf004;"
+                                FontFamily="FontAwesomeSolid"
+                                FontSize="20"
+TextColor="#FFFAF0"
+
+                                BackgroundColor="Transparent"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ExplorarViewModel}}, Path=ReactCommand}"
+                                CommandParameter="{Binding Source={RelativeSource Mode=Self}, Path=BindingContext, Converter={StaticResource ReactionConverter}, ConverterParameter=Love}">
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button"
+                                             Binding="{Binding SelectedReaction}"
+                                             Value="Love">
+                                        <Setter Property="TextColor" Value="Red"/>
+                                        <Setter Property="Scale" Value="1.3"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+
+                            <!-- Wow -->
+                            <Button Text="&#xf5c2;"
+                                FontFamily="FontAwesomeSolid"
+                                FontSize="20"
+TextColor="#FFFAF0"
+
+                                    
+                                BackgroundColor="Transparent"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ExplorarViewModel}}, Path=ReactCommand}"
+                                CommandParameter="{Binding Source={RelativeSource Mode=Self}, Path=BindingContext, Converter={StaticResource ReactionConverter}, ConverterParameter=Wow}">
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button"
+                                             Binding="{Binding SelectedReaction}"
+                                             Value="Wow">
+                                        <Setter Property="TextColor" Value="Orange"/>
+                                        <Setter Property="Scale" Value="1.3"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+
+                            <!-- Sad -->
+                            <Button Text="&#xf5b4;"
+                                FontFamily="FontAwesomeSolid"
+                                FontSize="20"
+                                    TextColor="#FFFAF0"
+
+                                    
+                                BackgroundColor="Transparent"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ExplorarViewModel}}, Path=ReactCommand}"
+                                CommandParameter="{Binding Source={RelativeSource Mode=Self}, Path=BindingContext, Converter={StaticResource ReactionConverter}, ConverterParameter=Sad}">
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button"
+                                             Binding="{Binding SelectedReaction}"
+                                             Value="Sad">
+                                        <Setter Property="TextColor" Value="LightBlue"/>
+                                        <Setter Property="Scale" Value="1.3"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+
+                            <!-- Angry -->
+                            <Button Text="&#xf556;"
+                                FontFamily="FontAwesomeSolid"
+                                FontSize="20"
+                                    TextColor="#FFFAF0"
+
+                                    
+                                BackgroundColor="Transparent"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:ExplorarViewModel}}, Path=ReactCommand}"
+                                CommandParameter="{Binding Source={RelativeSource Mode=Self}, Path=BindingContext, Converter={StaticResource ReactionConverter}, ConverterParameter=Angry}">
+                                <Button.Triggers>
+                                    <DataTrigger TargetType="Button"
+                                             Binding="{Binding SelectedReaction}"
+                                             Value="Angry">
+                                        <Setter Property="TextColor" Value="OrangeRed"/>
+                                        <Setter Property="Scale" Value="1.3"/>
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <!-- Indicador de posición -->
+        <Frame BackgroundColor="#40FFFFFF"
+           HeightRequest="30"
+           WidthRequest="150"
+           CornerRadius="15"
+           HorizontalOptions="Center"
+           VerticalOptions="Start"
+           Margin="0,50,0,0">
+            <Label Text="{Binding PositionIndicator}"
+               TextColor="White"
+               FontSize="14"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+        </Frame>
+    </Grid>
+    
+
+</ContentPage>

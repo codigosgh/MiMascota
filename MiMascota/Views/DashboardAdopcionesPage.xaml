@@ -1,0 +1,135 @@
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MiMascota.Views.DashboardAdopcionesPage"
+    xmlns:local="clr-namespace:MiMascota.Converters"
+    Title="Inicio"
+    BackgroundColor="Black">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BoolToColorConverter x:Key="BoolToColorConverter" />
+            <local:CountToHeightConverter x:Key="CountToHeightConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30">
+
+            <!-- PREMIUM -->
+            <Label
+        Text="Plus"
+        FontSize="18"
+        FontAttributes="Bold"
+        TextColor="White" />
+
+            <CollectionView
+        ItemsSource="{Binding PremiumPublicaciones}"
+                SelectionMode="Single"
+                x:Name="PremiumCV"
+                  SelectedItem="{Binding PublicacionSeleccionada}"
+        ItemsLayout="VerticalGrid, 3"
+        HeightRequest="{Binding PremiumPublicaciones.Count, Converter={StaticResource CountToHeightConverter}}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+              Padding="0"
+              HasShadow="False"
+              CornerRadius="8"
+              BorderColor="{Binding IsPremium, Converter={StaticResource BoolToColorConverter}, ConverterParameter='True=Green;False=Transparent'}"
+              BackgroundColor="Transparent">
+                            <Grid>
+                                <Image
+                  Source="{Binding PhotoUrl}"
+                  Aspect="AspectFill"
+                  HeightRequest="100" />
+                                <Label
+                  Text="{Binding Name}"
+                  TextColor="White"
+                  FontSize="12"
+                  BackgroundColor="#60000000"
+                  VerticalOptions="End"
+                  Padding="4" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- MÁS CERCANOS -->
+            <Label
+        Text="Más cercanos"
+        FontSize="18"
+        FontAttributes="Bold"
+        TextColor="White" />
+
+            <CollectionView
+        ItemsSource="{Binding NearbyUsers}"
+        ItemsLayout="VerticalGrid, 3"
+        SelectionMode="None"
+        HeightRequest="{Binding NearbyUsers.Count, Converter={StaticResource CountToHeightConverter}}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+              Padding="0"
+              HasShadow="False"
+              CornerRadius="8"
+              BorderColor="Transparent"
+              BackgroundColor="Transparent">
+                            <Grid>
+                                <Image
+                  Source="{Binding PhotoUrl}"
+                  Aspect="AspectFill"
+                  HeightRequest="100" />
+                                <Label
+                  Text="{Binding Name}"
+                  TextColor="White"
+                  FontSize="12"
+                  BackgroundColor="#60000000"
+                  VerticalOptions="End"
+                  Padding="4" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- MÁS REACCIONADOS -->
+            <Label
+        Text="Más reaccionados"
+        FontSize="18"
+        FontAttributes="Bold"
+        TextColor="White" />
+
+            <CollectionView
+        ItemsSource="{Binding TopReactedUsers}"
+        ItemsLayout="VerticalGrid, 3"
+        SelectionMode="None"
+        HeightRequest="{Binding TopReactedUsers.Count, Converter={StaticResource CountToHeightConverter}}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+              Padding="0"
+              HasShadow="False"
+              CornerRadius="8"
+              BorderColor="Transparent"
+              BackgroundColor="Transparent">
+                            <Grid>
+                                <Image
+                  Source="{Binding PhotoUrl}"
+                  Aspect="AspectFill"
+                  HeightRequest="100" />
+                                <Label
+                  Text="{Binding Name}"
+                  TextColor="White"
+                  FontSize="12"
+                  BackgroundColor="#60000000"
+                  VerticalOptions="End"
+                  Padding="4" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

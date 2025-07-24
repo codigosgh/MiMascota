@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MiMascota.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MiMascota.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MiMascota">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#1a2229" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#1a2229" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="Gray"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="Wheat"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar Route="MainTabBar" x:Name="MainTabBar">
+        <!-- Explorar -->
+        <ShellContent 
+            Title="Explorar" 
+            Icon="{FontImage FontFamily={StaticResource FontAwesomeSolid}, Glyph=&#xf1b0;}" 
+            Route="Explorar" 
+            ContentTemplate="{DataTemplate local:Explorar}" />
+
+        <!-- Adopciones -->
+        <ShellContent 
+            Title="Adopciones" 
+            Icon="{FontImage FontFamily={StaticResource FontAwesomeSolid}, Glyph=&#xf015;}" 
+            Route="DashboardAdopciones" 
+            ContentTemplate="{DataTemplate local:DashboardAdopcionesPage}" />
+
+        <!-- Mapa -->
+        <ShellContent 
+            Title="Mapa" 
+            Icon="{FontImage FontFamily={StaticResource FontAwesomeSolid}, Glyph=&#xf3c5;}" 
+            Route="Mapa" 
+            ContentTemplate="{DataTemplate local:MapPublicaciones}" />
+
+        <!-- Chat -->
+        <ShellContent 
+            Title="Chat" 
+            Icon="{FontImage FontFamily={StaticResource FontAwesomeSolid}, Glyph=&#xf075;}" 
+            Route="Chat" 
+            ContentTemplate="{DataTemplate local:Chats}" />
+
+        <!-- Perfil -->
+        <ShellContent 
+            Title="Perfil" 
+            Icon="{FontImage FontFamily={StaticResource FontAwesomeSolid}, Glyph=&#xf007;}" 
+            Route="Perfil" 
+            ContentTemplate="{DataTemplate local:PerfilPage}" />
+    </TabBar>
+
+    <!-- Página de login fuera del TabBar -->
+    <ShellContent 
+        Route="LoginPage" 
+        ContentTemplate="{DataTemplate local:LoginPage}" />
+
+</Shell>

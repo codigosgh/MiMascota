@@ -1,0 +1,121 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiMascota.Views.DetallesAdopcion"
+             Title="Publicación"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="True">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- FOTO + EDIT -->
+            <Grid HorizontalOptions="Center">
+                <Frame WidthRequest="120"
+               HeightRequest="120"
+               CornerRadius="60"
+               HasShadow="False"
+               Padding="0">
+                    <Image Source="{Binding PublicacionSeleccionada.PhotoUrl}"
+                 Aspect="AspectFill" />
+                </Frame>
+                <!-- Icono lápiz -->
+                <Label FontFamily="FontAwesomeSolid"
+               Text="&#xf303;"
+               FontSize="18"
+               BackgroundColor="White"
+               WidthRequest="32"
+               HeightRequest="32"
+               HorizontalOptions="End"
+               VerticalOptions="End"
+               Margin="0,0,-12,-12">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding EditCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+
+            <!-- NOMBRE y Cargo / Ubicación -->
+            <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                <Label Text="{Binding PublicacionSeleccionada.Name}"
+               FontSize="22"
+               FontAttributes="Bold"
+               TextColor="#333333" />
+                <Label Text="Rodo | Perro kiltro fachero"
+               FontSize="14"
+               TextColor="#777777" />
+            </VerticalStackLayout>
+
+            <!-- ESTADÍSTICAS -->
+            <HorizontalStackLayout Spacing="40" HorizontalOptions="Center">
+                <!-- Likes -->
+                <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                    <Label FontFamily="FontAwesomeSolid" Text="&#xf004;" FontSize="20" TextColor="Red" HorizontalOptions="Center"/>
+                    <Label Text="629" FontSize="14" TextColor="#333333"/>
+                </VerticalStackLayout>
+                <!-- Chats -->
+                <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                    <Label FontFamily="FontAwesomeSolid" Text="&#xf086;" FontSize="20" TextColor="#28A745" HorizontalOptions="Center"/>
+                    <Label Text="2035" FontSize="14" TextColor="#333333"/>
+                </VerticalStackLayout>
+                <!-- Friends count -->
+                <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                    <Label FontFamily="FontAwesomeSolid" Text="&#xf0c0;" FontSize="20" TextColor="#FFA500" HorizontalOptions="Center"/>
+                    <Label Text="2079" FontSize="14" TextColor="#333333"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            <!-- PHOTOS -->
+            <Label Text="Fotos"
+ FontSize="16"
+ FontAttributes="Bold"
+ TextColor="#333333" />
+            <CollectionView ItemsSource="{Binding Photos}"
+          ItemsLayout="HorizontalList"
+          HeightRequest="120"
+          SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame WidthRequest="100"
+       HeightRequest="100"
+       CornerRadius="8"
+       HasShadow="False"
+       Padding="0">
+                            <Image Source="{Binding}"
+         Aspect="AspectFill" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- FRIENDS -->
+            <Label Text="Descripcion"
+             FontSize="16"
+             FontAttributes="Bold"
+             TextColor="#333333" />
+            <CollectionView ItemsSource="{Binding Friends}"
+                      ItemsLayout="HorizontalList"
+                      HeightRequest="100"
+                      SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Spacing="4" WidthRequest="80" HorizontalOptions="Center">
+                            <Frame WidthRequest="60"
+                     HeightRequest="60"
+                     CornerRadius="30"
+                     HasShadow="False"
+                     Padding="0">
+                                <Image Source="{Binding PhotoUrl}"
+                       Aspect="AspectFill" />
+                            </Frame>
+                            <Label Text="{Binding Name}"
+                     FontSize="12"
+                     LineBreakMode="TailTruncation"
+                     HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
