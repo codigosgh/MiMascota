@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiMascota.Views.RegistroMascotaPage"
+             Title="RegistroMascotaPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Información de la Mascota" FontSize="Medium" FontAttributes="Bold" />
+
+            <Label Text="Tipo de Mascota" />
+            <Picker x:Name="tipoPicker" Title="Selecciona el tipo" />
+
+
+            <Label Text="Nombre de la Mascota" />
+            <Entry x:Name="nombreEntry" Placeholder="Nombre" />
+
+            <Label Text="Raza" />
+            <Entry x:Name="razaEntry" Placeholder="Raza" />
+
+            <Label Text="Número de Chip" />
+            <Entry x:Name="chipEntry" Placeholder="Número de chip" Keyboard="Numeric" />
+
+            <Label Text="Dirección de la Mascota" />
+            <Entry x:Name="direccionMascotaEntry" Placeholder="Dirección" />
+
+            <Label Text="Teléfono de Contacto" />
+            <Entry x:Name="telefonoMascotaEntry" Placeholder="Teléfono" Keyboard="Telephone" />
+
+            <BoxView HeightRequest="1" Color="Gray" Margin="0,10"/>
+
+            <Label Text="Información del Dueño" FontSize="Medium" FontAttributes="Bold" />
+
+            <Label Text="Nombre del Dueño" />
+            <Entry x:Name="nombreDuenoEntry" Placeholder="Nombre del dueño" />
+
+            <Label Text="Región" />
+            <Picker x:Name="regionPicker" Title="Selecciona región" SelectedIndexChanged="OnRegionChanged" />
+
+            <Label Text="Comuna" />
+            <Picker x:Name="comunaPicker" Title="Selecciona comuna" />
+
+            <Label Text="Dirección" />
+            <Entry x:Name="direccionDuenoEntry" Placeholder="Dirección" />
+
+            <Label Text="Teléfono" />
+            <Entry x:Name="telefonoDuenoEntry" Placeholder="Teléfono" Keyboard="Telephone" />
+
+            <Button Text="Registrar Mascota" Clicked="OnRegistrarClicked" Margin="0,20,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
+    
+    
+    

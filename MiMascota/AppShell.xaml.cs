@@ -10,6 +10,7 @@ namespace MiMascota
             Routing.RegisterRoute(nameof(RegistroPage), typeof(RegistroPage));
             Routing.RegisterRoute(nameof(RecuperarPassPage), typeof(RecuperarPassPage));
             Routing.RegisterRoute(nameof(EditarPerfil), typeof(EditarPerfil));
+            Routing.RegisterRoute(nameof(RegistroMascotaPage), typeof(RegistroMascotaPage));
 
         }
 
