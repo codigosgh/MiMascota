@@ -73,7 +73,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Interfaces\" />
-	  <Folder Include="Servicios\" />
 	  <Folder Include="Popups\" />
 	</ItemGroup>
 
@@ -112,6 +111,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\PerfilPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RecuperarPassPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\RegistroAdopcionPage.xaml">

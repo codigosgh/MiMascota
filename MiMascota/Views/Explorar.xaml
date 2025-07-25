@@ -8,6 +8,7 @@
           x:Class="MiMascota.Views.Explorar"
           Title="Explorar"
           Shell.NavBarIsVisible="False"
+             BackgroundColor="Transparent"
           NavigationPage.HasNavigationBar="False">
 
     
@@ -33,7 +34,10 @@
                         Source="{Binding VideoUrl}"
                         Aspect="AspectFill"
                         x:Name="mediaElement"
+                            ShouldAutoPlay="True"
                         Loaded="OnMediaElementLoaded">
+                            
+
                             <!-- Opcional: Gesture para play/pause manual -->
                             <toolkit:MediaElement.GestureRecognizers>
                                 <TapGestureRecognizer NumberOfTapsRequired="2" />

@@ -1,12 +1,16 @@
+using MiMascota.Servicios;
+
 namespace MiMascota.Views;
 
 public partial class LoginPage : ContentPage
 {
     private bool isPasswordVisible = false;
+    private readonly Comun _comun;
 
     public LoginPage()
 	{
 		InitializeComponent();
+        _comun = new Comun();   
 	}
 
     private void TogglePasswordButton_Clicked(object sender, EventArgs e)
@@ -21,14 +25,33 @@ public partial class LoginPage : ContentPage
         var username = UsernameEntry.Text;
         var password = PasswordEntry.Text;
 
-        // Aquí iría la validación o llamada al backend
         if (!string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password))
         {
-            await DisplayAlert("Login", $"Bienvenido, {username}", "OK");
+            int userId = username == "admin" ? 1 : 0;
+            _comun.setSession(userId);
+
+            _comun.CambiarVisibilidadFlyouts(true);
+            await Shell.Current.GoToAsync("///MainTabBar/Perfil", true);
         }
         else
         {
             await DisplayAlert("Error", "Por favor, completa todos los campos.", "OK");
         }
     }
+
+
+
+    private async void OnRegisterTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("/RegistroPage");
+    }
+
+
+    private async void OnForgotPasswordTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("/RecuperarPassPage");
+    }
+
+
+
 }

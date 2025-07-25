@@ -1,12 +1,16 @@
+using MiMascota.Servicios;
+
 namespace MiMascota.Views;
 
 public partial class RegistroAdopcionPage : ContentPage
 {
-	public RegistroAdopcionPage()
+    private readonly Comun _comun;
+    public RegistroAdopcionPage()
 	{
-		InitializeComponent();
+        InitializeComponent();
+        _comun = new Comun();
         tipoPicker.ItemsSource = new List<string> { "Perro", "Gato", "Conejo", "Tortuga", "Otro" };
-        regionPicker.ItemsSource = new List<string>(comunasPorRegion.Keys);
+        regionPicker.ItemsSource = new List<string>(comunasPorRegion.Keys);   
     }
     Dictionary<string, List<string>> comunasPorRegion = new()
     {
