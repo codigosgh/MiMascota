@@ -33,8 +33,7 @@
                         <toolkit:MediaElement
                         Source="{Binding VideoUrl}"
                         Aspect="AspectFill"
-                        x:Name="mediaElement"
-                            ShouldAutoPlay="True"
+                        x:Name="mediaElement"                            
                         Loaded="OnMediaElementLoaded">
                             
 

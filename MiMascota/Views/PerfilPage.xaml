@@ -35,7 +35,7 @@
                 </VerticalStackLayout>
 
                 <Button
-                    Text="Edit"
+                    Text="Editar"
                     BackgroundColor="#007AFF"
                     TextColor="White"
                     CornerRadius="8"
@@ -43,7 +43,16 @@
                     HorizontalOptions="EndAndExpand" 
                     Clicked="Editar_Clicked"
                     />
-                
+                <Button
+           Text="Agregar Mascota"
+           BackgroundColor="Red"
+           TextColor="White"
+           CornerRadius="8"
+           Padding="8,4"
+           HorizontalOptions="EndAndExpand" 
+           Clicked="AddMascota_Clicked"
+           />
+
             </HorizontalStackLayout>
 
             <!-- Acción rápida: Favorito / Chat / Llamada -->
@@ -89,6 +98,12 @@
                 
                 
             </HorizontalStackLayout>
+
+            <Label
+             Text="Mis Mascotas"
+             FontSize="18"
+             FontAttributes="Bold"
+             TextColor="#333333" />
 
             <!-- Popular Section -->
             <Label

@@ -25,4 +25,9 @@ public partial class PerfilPage : ContentPage
         Shell.Current.GoToAsync("/EditarPerfil");
 
     }
+
+    private void AddMascota_Clicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("/RegistroMascotaPage");
+    }
 }
