@@ -40,7 +40,10 @@
                     TextColor="White"
                     CornerRadius="8"
                     Padding="8,4"
-                    HorizontalOptions="EndAndExpand" />
+                    HorizontalOptions="EndAndExpand" 
+                    Clicked="Editar_Clicked"
+                    />
+                
             </HorizontalStackLayout>
 
             <!-- Acción rápida: Favorito / Chat / Llamada -->
@@ -83,11 +86,13 @@
                         <TapGestureRecognizer Command="{Binding CallCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
+                
+                
             </HorizontalStackLayout>
 
             <!-- Popular Section -->
             <Label
-                Text="Popular"
+                Text="Publicaciones"
                 FontSize="18"
                 FontAttributes="Bold"
                 TextColor="#333333" />
@@ -169,7 +174,7 @@
 
             <!-- My Favorite Section -->
             <Label
-                Text="My Favorite"
+                Text="Multimedia"
                 FontSize="18"
                 FontAttributes="Bold"
                 TextColor="#333333"
@@ -242,6 +247,17 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
+
+     <Button
+     Text="Cerrar Sesión"
+     BackgroundColor="White"
+     TextColor="Red"
+     CornerRadius="8"
+     Padding="8,4"
+     x:Name="BtnCerrarSesion"
+     Clicked="BtnCerrarSesion_Clicked"    
+     HorizontalOptions="EndAndExpand" />
 
         </VerticalStackLayout>
     </ScrollView>
