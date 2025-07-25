@@ -2,11 +2,98 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MiMascota.Views.RegistroPage"
-             Title="RegistroPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             BackgroundColor="#F5F7FA"
+             Title="Registro">
+
+    <ScrollView>
+        <Grid RowDefinitions="*, Auto, *" ColumnDefinitions="*">
+            <VerticalStackLayout Grid.Row="1"
+                                 Spacing="20"
+                                 Padding="30"
+                                 BackgroundColor="White"
+                                 Margin="20"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="Center"
+                                 WidthRequest="340"
+                                 >
+
+                <Image Source="lock_icon.png"
+                       HeightRequest="60"
+                       WidthRequest="60"
+                       HorizontalOptions="Center" />
+
+                <Label Text="Crear Cuenta"
+                       FontSize="24"
+                       HorizontalOptions="Center"
+                       TextColor="#1976D2"
+                       FontAttributes="Bold" />
+
+                <Entry x:Name="RutEntry"
+                       Placeholder="RUT"
+                       Keyboard="Text"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       BackgroundColor="#F0F0F0"
+                       HeightRequest="45"
+                       />
+
+                <Entry x:Name="NombreEntry"
+                       Placeholder="Nombre Completo"
+                       Keyboard="Text"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       BackgroundColor="#F0F0F0"
+                       HeightRequest="45"
+                       />
+
+                <Entry x:Name="CorreoEntry"
+                       Placeholder="Correo Electrónico"
+                       Keyboard="Email"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       BackgroundColor="#F0F0F0"
+                       HeightRequest="45"
+                        />
+
+                <Entry x:Name="TelefonoEntry"
+                       Placeholder="Teléfono (opcional)"
+                       Keyboard="Telephone"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       BackgroundColor="#F0F0F0"
+                       HeightRequest="45"
+                       />
+
+                <Grid>
+                    <Entry x:Name="PasswordEntry"
+                           Placeholder="Contraseña"
+                           IsPassword="True"
+                           TextColor="Black"
+                           PlaceholderColor="Gray"
+                           BackgroundColor="#F0F0F0"
+                           HeightRequest="45"
+                       />
+
+                    <ImageButton x:Name="TogglePasswordButton"
+                                 Source="eye_closed.png"
+                                 BackgroundColor="Transparent"
+                                 WidthRequest="30"
+                                 HeightRequest="30"
+                                 HorizontalOptions="End"
+                                 VerticalOptions="Center"
+                                 Margin="0,0,10,0"
+                                 Clicked="TogglePasswordButton_Clicked"/>
+                </Grid>
+
+                <Button Text="Registrarse"
+                        Clicked="OnRegisterClicked"
+                        BackgroundColor="#1976D2"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HeightRequest="50"
+                        FontAttributes="Bold" />
+
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>

@@ -103,5 +103,23 @@ namespace MiMascota.Views
             // Pausar todos los videos cuando se abandona la página
             ViewModel.CurrentMedia = null;
         }
+
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Esperar un poco para que los MediaElements se asocien correctamente
+          
+
+            var firstItem = ViewModel.Videos?.FirstOrDefault();
+            if (firstItem != null && ViewModel.MediaElementsByItem.TryGetValue(firstItem, out var mediaElement) && mediaElement != null)
+            {
+                mediaElement.SeekTo(TimeSpan.Zero);
+                await Task.Delay(3000);
+                mediaElement.Play();
+                ViewModel.CurrentMedia = mediaElement;
+            }
+        }
     }
 }

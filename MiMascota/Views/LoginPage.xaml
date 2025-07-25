@@ -2,68 +2,90 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MiMascota.Views.LoginPage"
-             Title="LoginPage">
+             BackgroundColor="#F5F7FA"
+             Title="Iniciar Sesión">
+
     <Grid RowDefinitions="*, Auto, *" ColumnDefinitions="*">
         <VerticalStackLayout Grid.Row="1"
-                          Spacing="20"
-                          Padding="30"
-                          BackgroundColor="White"
-                          Margin="20"
-                          VerticalOptions="Center"
-                          HorizontalOptions="Center"
-                          WidthRequest="320"
-                          HeightRequest="400"                             
-                          Background="#ffffff">
+                             Spacing="20"
+                             Padding="30"
+                             BackgroundColor="White"
+                             Margin="20"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             WidthRequest="320"
+                             HeightRequest="600"                             
+                             Background="#ffffff">
 
             <Image Source="lock_icon.png"
-                HeightRequest="60"
-                WidthRequest="60"
-                HorizontalOptions="Center" />
+                   HeightRequest="60"
+                   WidthRequest="60"
+                   HorizontalOptions="Center" />
 
             <Label Text="Iniciar Sesión"
-                FontSize="24"
-                HorizontalOptions="Center"
-                TextColor="#1976D2"
-                FontAttributes="Bold"/>
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   TextColor="#1976D2"
+                   FontAttributes="Bold"/>
 
             <Entry x:Name="UsernameEntry"
-                Placeholder="Usuario"
-                TextColor="Black"
-                PlaceholderColor="Gray"
-                BackgroundColor="#F0F0F0"
-                Margin="0,10,0,0"
-                HeightRequest="45"
-                />
+                   Placeholder="Usuario"
+                   TextColor="Black"
+                   PlaceholderColor="Gray"
+                   BackgroundColor="#F0F0F0"
+                   Margin="0,10,0,0"
+                   HeightRequest="45"
+                   />
 
             <Grid>
                 <Entry x:Name="PasswordEntry"
-                    Placeholder="Contraseña"
-                    IsPassword="True"
-                    TextColor="Black"
-                    PlaceholderColor="Gray"
-                    BackgroundColor="#F0F0F0"
-                    HeightRequest="45"
-                    Margin="0"                       
-                />
+                       Placeholder="Contraseña"
+                       IsPassword="True"
+                       TextColor="Black"
+                       PlaceholderColor="Gray"
+                       BackgroundColor="#F0F0F0"
+                       HeightRequest="45"
+                       Margin="0"                       
+                   />
 
                 <ImageButton x:Name="TogglePasswordButton"
-                          Source="eye_closed.png"
-                          BackgroundColor="Transparent"
-                          WidthRequest="30"
-                          HeightRequest="30"
-                          HorizontalOptions="End"
-                          VerticalOptions="Center"
-                          Margin="0,0,10,0"
-                          Clicked="TogglePasswordButton_Clicked"/>
+                             Source="eye_closed.png"
+                             BackgroundColor="Transparent"
+                             WidthRequest="30"
+                             HeightRequest="30"
+                             HorizontalOptions="End"
+                             VerticalOptions="Center"
+                             Margin="0,0,10,0"
+                             Clicked="TogglePasswordButton_Clicked"/>
             </Grid>
 
             <Button Text="Entrar"
-                 Clicked="OnLoginClicked"
-                 BackgroundColor="#1976D2"
-                 TextColor="White"
-                 CornerRadius="10"
-                 HeightRequest="50"
-                 FontAttributes="Bold"/>
+                    Clicked="OnLoginClicked"
+                    BackgroundColor="#1976D2"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    FontAttributes="Bold"/>
+
+
+            <!-- Link para registrarse -->
+            <Label Text="¿No tienes cuenta? Regístrate aquí"
+       TextColor="Blue"
+       HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Link para recuperar contraseña -->
+            <Label Text="¿Olvidaste tu contraseña?"
+       TextColor="Blue"
+       HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />                  
+                </Label.GestureRecognizers>
+            </Label>
+
 
         </VerticalStackLayout>
     </Grid>
